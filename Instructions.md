@@ -25,7 +25,9 @@ We will build the sample from source using sbt, push the generated Docker images
 Start a terminal window.
 
 A clone of the git repo at https://github.com/lagom/lagom-java-sbt-chirper-example is located in the ~/reactive-minilab/lagom-java-sbt-chirper-example directory:
-'code'    cd ~/reactive-minilab/lagom-java-sbt-chirper-example
+'''   
+cd ~/reactive-minilab/lagom-java-sbt-chirper-example
+'''
 
 Using the sbt build tool build the project, which includes the modules inside.
 'code'     sbt clean docker:publishLocal
