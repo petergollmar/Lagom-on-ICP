@@ -116,13 +116,13 @@ Edit the file:
 front-end/src/main/resources/assets/main.jsx
 
 Search for and modify the string:
-    `<Link to="/" id="logo">Chirper</Link>`
+```
+<Link to="/" id="logo">Chirper</Link>
+```
 For example, change 'Chirper' to 'My Chirper'
 
-Modify the file: build.sbt so that line 85 becomes:
-    `version := buildVersion101,`
-
-    which is a version string defined earlier in the build.sbt file.
+Modify the file: build.sbt so that line 85 becomes: `version := buildVersion101,`
+which is a version string defined earlier in the build.sbt file.
 
 Now rebuild the front-end module
 ```    
