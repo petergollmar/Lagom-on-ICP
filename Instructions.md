@@ -25,22 +25,22 @@ We will build the sample from source using sbt, push the generated Docker images
 Start a terminal window.
 
 A clone of the git repo at https://github.com/lagom/lagom-java-sbt-chirper-example is located in the ~/reactive-minilab/lagom-java-sbt-chirper-example directory:
-    cd ~/reactive-minilab/lagom-java-sbt-chirper-example
+'code'    cd ~/reactive-minilab/lagom-java-sbt-chirper-example
 
 Using the sbt build tool build the project, which includes the modules inside.
-    sbt clean docker:publishLocal
+'code'     sbt clean docker:publishLocal
 
 Once the build has finished, you will have 5 new images in your local Docker registry, front-end, chirp-impl, friend-impl, activity-stream-impl and load-test-impl, all tagged with 1.0.0
 
 Now push push the Docker images to the ICP registry. First tag 4 of the images with the remote registry name (you don't need to push the load-test-impl image):
 
-    docker tag front-end:1.0.0 mycluster.icp:8500/reactive/reactive-sample-front-end:1.0.0
+'code'     docker tag front-end:1.0.0 mycluster.icp:8500/reactive/reactive-sample-front-end:1.0.0
 
 Repeat this for chirp-impl, friend-impl and activity-stream-impl:
 
-    docker tag activity-stream-impl:1.0.0 mycluster.icp:8500/reactive/reactive-sample-activity-stream-impl:1.0.0
-    docker tag friend-impl:1.0.0 mycluster.icp:8500/reactive/reactive-sample-friend-impl:1.0.0
-    docker tag chirp-impl:1.0.0 mycluster.icp:8500/reactive/reactive-sample-chirp-impl:1.0.0
+'code'     docker tag activity-stream-impl:1.0.0 mycluster.icp:8500/reactive/reactive-sample-activity-stream-impl:1.0.0
+'code'     docker tag friend-impl:1.0.0 mycluster.icp:8500/reactive/reactive-sample-friend-impl:1.0.0
+'code'     docker tag chirp-impl:1.0.0 mycluster.icp:8500/reactive/reactive-sample-chirp-impl:1.0.0
 
 This assumes you are using the 'reactive' namespace created above. Also note that the image names all need to have 'reactive-sample-...' prepended to them. This is to match the values used in the helm chart (see below).
 
